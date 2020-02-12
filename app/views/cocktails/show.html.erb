@@ -1,0 +1,4 @@
+<h1><%= @cocktail.name %></h1>
+
+<%= link_to "back to all cocktails", cocktails_path %>
+<%= link_to "add ingredients to this cocktail", new_cocktail_dose_path(@cocktail) %>
