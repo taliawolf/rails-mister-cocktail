@@ -12,6 +12,21 @@
     <%= f.button :submit, class: 'btn btn-danger' %>
 <% end %>
 
+<div>
+  <h2>Reviews</h2>
+  <% @cocktail.reviews.each do |review| %>
+    <div class="d-flex" >
+    <%= review.content %>
+      <ul class= "list-inline ml-3">
+        <% review.rating.times do %>
+        <li class="list-inline-item"><i class="fas fa-star-of-david"></i></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+</div>
+
 <%= link_to "back to all cocktails", cocktails_path %>
+<%= link_to "Add a review", new_cocktail_review_path(@cocktail) %>
 </div>
 
