@@ -15,5 +15,15 @@
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 import 'bootstrap';
+import 'select2/dist/css/select2.css';
+import { initSelect2 } from '../components/init_select2';
+
+// const fireEvents = () => {
+//   const input = document.querySelector('#dose_ingredient_id')
+//   input.classList.add('select2')
+  initSelect2();
+// };
+
+// document.addEventListener('DOMContentLoaded', fireEvents)
 
 console.log('Hello World from Webpacker')
