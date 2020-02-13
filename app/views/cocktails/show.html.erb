@@ -1,32 +1,33 @@
-<h1><%= @cocktail.name.capitalize %></h1>
-<ul>
-  <% @cocktail.doses.each do |dose| %>
-  <li><%= dose.description %>: <%= dose.ingredient.name %> <%= link_to "delete", dose_path(dose), method: :delete, data: { confirm: "Are you sure?" }%></li>
-  <% end %>
-</ul>
-<div>
-  <h2>Add an ingredient</h2>
+<div class="container">
+  <h1 class= "title"><%= @cocktail.name.capitalize %></h1>
+    <div class="text-center mt-0">
+      <% @cocktail.doses.each do |dose| %>
+        <p><%= dose.description %>: <%= dose.ingredient.name %> <%= link_to "delete", dose_path(dose), method: :delete, data: { confirm: "Are you sure?" }, class: 'button'%></p>
+      <% end %>
+    </div>
+  <div>
+  <h2 class="text-center mt-4">Add an ingredient</h2>
   <%= simple_form_for [@cocktail, @dose] do |f| %>
     <%= f.input :description %>
     <%= f.input :ingredient, collection: Ingredient.all, input_html: { class: 'select2' }, include_hidden: false %>
-    <%= f.button :submit, class: 'btn btn-danger' %>
-<% end %>
-
-<div>
-  <h2>Reviews</h2>
-  <% @cocktail.reviews.each do |review| %>
-    <div class="d-flex" >
-    <%= review.content %>
-      <ul class= "list-inline ml-3">
-        <% review.rating.times do %>
-        <li class="list-inline-item"><i class="fas fa-star-of-david"></i></li>
-        <% end %>
-      </ul>
-    </div>
+    <%= f.button :submit, class: 'button' %>
   <% end %>
-</div>
-
-<%= link_to "back to all cocktails", cocktails_path %>
-<%= link_to "Add a review", new_cocktail_review_path(@cocktail) %>
+  </div>
+  <div>
+    <h2>Reviews</h2>
+    <% @cocktail.reviews.each do |review| %>
+      <div class="d-flex" >
+      <%= review.content %>
+        <ul class= "list-inline ml-3">
+          <% review.rating.times do %>
+          <li class="list-inline-item"><i class="fas fa-star-of-david"></i></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+  <%= link_to "back to all cocktails", cocktails_path, class: 'button' %>
+  <%= link_to "Add a review", new_cocktail_review_path(@cocktail), class: 'button' %>
+  </div>
 </div>
 
