@@ -9,7 +9,7 @@
     <% @cocktails.order(average_rating: :desc).each do |cocktail| %>
       <div class="col-12 col-sm-6 col-md-4">
         <div class="cocktail-card">
-          <div class="card-img"></div>
+          <div class="card-img" style= "background-image:url('<%= cl_image_path cocktail.photo.key, height: 300, width: 400, crop: :fill %>')"></div>
           <div class="cocktail-card-body">
             <div class="card_title_flex">
               <h5><%= cocktail.name.capitalize %></h5>
