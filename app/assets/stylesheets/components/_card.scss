@@ -33,3 +33,34 @@
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
   }
 }
+
+a:hover{
+  text-decoration: none;
+  box-shadow: 2px 2px 4px #C67174;
+}
+
+.card_title_flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+
+  h5 {
+  font-size: 16px;
+
+  }
+}
+
+// .cocktail-card-title {
+//   font-size: 16px;
+// }
+
+
+
+
+
+
+
+
+
+

@@ -13,7 +13,7 @@
     <%= f.button :submit, class: 'button' %>
   <% end %>
   </div>
-  <div>
+  <div class="mt-3">
     <h2>Reviews</h2>
     <% @cocktail.reviews.each do |review| %>
       <div class="d-flex" >
@@ -26,8 +26,9 @@
       </div>
     <% end %>
   </div>
-  <%= link_to "back to all cocktails", cocktails_path, class: 'button' %>
-  <%= link_to "Add a review", new_cocktail_review_path(@cocktail), class: 'button' %>
+  <div class="text-center mb-5 mt-3">
+    <%= link_to "back to all cocktails", cocktails_path, class: 'button' %>
+    <%= link_to "Add a review", new_cocktail_review_path(@cocktail), class: 'button' %>
   </div>
 </div>
 

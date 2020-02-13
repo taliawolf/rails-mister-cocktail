@@ -11,7 +11,10 @@
         <div class="cocktail-card">
           <div class="card-img"></div>
           <div class="cocktail-card-body">
-            <h5 class="cocktail-card-title"><%= cocktail.name %> Avg. rating:<%= cocktail.average_rating %></h5>
+            <div class="card_title_flex">
+              <h5><%= cocktail.name.capitalize %></h5>
+              <h5>Avg. rating: <%= cocktail.average_rating %></h5>
+            </div>
             <%= link_to "See Details", cocktail_path(cocktail)%>
           </div>
         </div>
