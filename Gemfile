@@ -37,6 +37,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'
+# gem 'pg_search', '~> 2.3.0'
 gem 'simple_form'
 gem 'httparty'
 
