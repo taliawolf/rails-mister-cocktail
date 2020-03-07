@@ -6,6 +6,8 @@ class CocktailsController < ApplicationController
   def show
     @cocktail = Cocktail.find(params[:id])
     @dose = Dose.new
+    split = @cocktail.name.split
+    @capitalized_name = split.map { |word| word.capitalize }.join(" ")
   end
 
   def new

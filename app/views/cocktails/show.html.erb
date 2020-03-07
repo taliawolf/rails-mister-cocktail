@@ -1,5 +1,6 @@
 <div class="container">
-  <h1 class= "title"><%= @cocktail.name.capitalize %></h1>
+  <h1 class= "title"><%= @capitalized_name %></h1>
+  <div class='cocktail-show-image'> <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %> </div>
     <div class="text-center mt-0">
       <% @cocktail.doses.each do |dose| %>
         <p><%= dose.description %>: <%= dose.ingredient.name %> <%= link_to "delete", dose_path(dose), method: :delete, data: { confirm: "Are you sure?" }, class: 'button'%></p>
